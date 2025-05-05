@@ -14,12 +14,12 @@ export const metadata: Metadata = {
     default: "Nils Koch",
     template: "%s | Nils Koch",
   },
-  description: "This is my portfolio.",
+  description: "Place to share opionions, ideas, and learnings.",
   openGraph: {
-    title: "My Portfolio",
-    description: "This is my portfolio.",
+    title: "Blog by Nils Koch",
+    description: "Place to share opionions, ideas, and learnings.",
     url: baseUrl,
-    siteName: "My Portfolio",
+    siteName: "Blog by Nils Koch",
     locale: "en_US",
     type: "website",
   },
@@ -49,7 +49,7 @@ export default function RootLayout({
       className={cx(
         "text-black bg-white dark:text-white dark:bg-black",
         GeistSans.variable,
-        GeistMono.variable,
+        GeistMono.variable
       )}
     >
       <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
