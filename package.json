@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_ENV=development next dev",
     "build": "next build",
     "start": "next start"
   },
@@ -16,6 +16,8 @@
     "next": "canary",
     "next-mdx-remote": "^4.4.1",
     "postcss": "^8.4.35",
+    "posthog-js": "^1.240.6",
+    "posthog-node": "^4.17.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sugar-high": "^0.6.0",
