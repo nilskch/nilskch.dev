@@ -7,13 +7,22 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
+    const storedConsent = localStorage.getItem("cookie-consent");
+    const hasConsent = storedConsent === "true";
+    
+    // Only initialize PostHog if consent is given or hasn't been decided yet
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
       api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
       capture_pageview: false,
       capture_pageleave: true,
       debug: process.env.NODE_ENV === "development",
       persistence: "localStorage",
+      opt_out_capturing_by_default: storedConsent === "false", // Opt out if explicitly declined
     });
+    
+    if (storedConsent === "false") {
+      posthog.opt_out_capturing();
+    }
   }, []);
 
   return (

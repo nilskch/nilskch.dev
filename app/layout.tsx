@@ -6,6 +6,7 @@ import { Navbar } from "./components/nav";
 import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
 import { PostHogProvider } from "./components/PostHogProvider";
+import CookieBanner from "./components/CookieBanner";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -58,6 +59,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </main>
+          <CookieBanner />
         </PostHogProvider>
       </body>
     </html>
